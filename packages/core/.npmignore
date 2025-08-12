@@ -13,8 +13,6 @@ __tests__/
 *.test.*
 *.spec.*
 
-# Documentation
-README.md
 CHANGELOG.md
 
 # IDE files
