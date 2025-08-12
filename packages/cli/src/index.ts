@@ -13,7 +13,7 @@ const pkg = JSON.parse(readFileSync(join(__dirname, "../package.json"), "utf-8")
 const program = new Command();
 
 program
-  .name("svgenius")
+  .name("svgenio")
   .description("A CLI tool for batch processing and converting SVGs.")
   .version(pkg.version);
 

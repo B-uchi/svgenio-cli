@@ -1,7 +1,7 @@
 import { Command } from "commander";
 import * as fs from "fs";
 import * as path from "path";
-import { svgenius } from "@svgenius/core";
+import { svgenio } from "@svgenio/core";
 
 export default function convertCommand(program: Command) {
   program
@@ -12,7 +12,7 @@ export default function convertCommand(program: Command) {
     .option("-n, --name <name>", "Component name")
     .action(async (input, options) => {
       try {
-        const result = svgenius.convert(input, {
+        const result = svgenio.convert(input, {
           typescript: options.typescript,
           componentName: options.name
         });
@@ -23,8 +23,13 @@ export default function convertCommand(program: Command) {
 
         fs.writeFileSync(outputPath, result.code);
         console.log(`✅ Converted: ${outputPath}`);
+        console.log(`📝 Component name: ${result.componentName}`);
       } catch (err) {
-        console.error("❌ Error:", err);
+        if (err instanceof Error) {
+          console.error(err.message);
+        } else {
+          console.error("❌ An unexpected error occurred:", err);
+        }
         process.exit(1);
       }
     });

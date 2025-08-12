@@ -1,5 +1,5 @@
 {
-  "name": "@svgenius/core",
+  "name": "@svgenio/core",
   "version": "1.0.0",
   "description": "Core SVG to React component conversion library",
   "type": "module",
@@ -12,15 +12,28 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
     "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["svg", "react", "converter", "components"],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["svg", "react", "converter", "components", "typescript"],
+  "author": "Ibuchukwu Umeano",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-uchi/svgenio-cli.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/B-uchi/svgenio-cli/issues"
+  },
+  "homepage": "https://github.com/B-uchi/svgenio-cli#readme",
   "dependencies": {
     "camelcase": "^8.0.0",
     "cheerio": "^1.1.2"
@@ -28,5 +41,8 @@
   "devDependencies": {
     "@types/node": "^24.2.1",
     "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

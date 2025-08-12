@@ -1,5 +1,5 @@
 {
-  "name": "svgenius-cli",
+  "name": "svgenio-cli",
   "version": "1.0.0",
   "description": "A CLI tool for batch processing and converting SVGs to React components",
   "private": true,
@@ -13,8 +13,8 @@
     "clean": "npm run clean --workspaces"
   },
   "keywords": ["svg", "react", "cli", "converter", "components"],
-  "author": "",
-  "license": "ISC",
+  "author": "Ibuchukwu Umeano",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^24.2.1",
     "typescript": "^5.0.0"
