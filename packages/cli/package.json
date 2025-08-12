@@ -1,0 +1,27 @@
+{
+  "name": "@svgenius/cli",
+  "version": "1.0.0",
+  "description": "CLI tool for SVG to React component conversion",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "svgenius": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["svg", "react", "cli", "converter"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@svgenius/core": "file:../core",
+    "commander": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "typescript": "^5.0.0"
+  }
+}
