@@ -1,0 +1,47 @@
+{
+  "name": "@svgenio/client",
+  "version": "1.0.0",
+  "description": "Client-side SVG to React component conversion library",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["svg", "react", "converter", "components", "typescript", "client", "browser"],
+  "author": "Ibuchukwu Umeano",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-uchi/svgenio-cli.git",
+    "directory": "packages/client"
+  },
+  "bugs": {
+    "url": "https://github.com/B-uchi/svgenio-cli/issues"
+  },
+  "homepage": "https://github.com/B-uchi/svgenio-cli#readme",
+  "dependencies": {
+    "camelcase": "^8.0.0",
+    "cheerio": "^1.1.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0"
+  }
+} 
