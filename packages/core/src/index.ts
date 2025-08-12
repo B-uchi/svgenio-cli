@@ -17,7 +17,22 @@ export interface BatchOptions {
 }
 
 function convert(filePath: string, options: ConvertOptions = {}) {
+  // Check if file exists before trying to read it
+  if (!existsSync(filePath)) {
+    throw new Error(`❌ SVG file not found: "${filePath}"\n   Please check the file path and make sure the file exists.`);
+  }
+
+  // Check if file has .svg extension
+  if (!filePath.toLowerCase().endsWith('.svg')) {
+    throw new Error(`❌ Invalid file type: "${filePath}"\n   Please provide a valid SVG file with .svg extension.`);
+  }
+
   const svgContent = readFileSync(filePath, "utf-8");
+
+  // Check if file is empty
+  if (!svgContent.trim()) {
+    throw new Error(`❌ Empty SVG file: "${filePath}"\n   The file appears to be empty. Please provide a valid SVG file with content.`);
+  }
 
   const svgMarkup = parseSvg(svgContent);
   const transformedMarkup = transformSvg(svgMarkup);
@@ -32,6 +47,11 @@ function convert(filePath: string, options: ConvertOptions = {}) {
 }
 
 function batch(folderPath: string, options: BatchOptions = {}) {
+  // Check if folder exists
+  if (!existsSync(folderPath)) {
+    throw new Error(`❌ Folder not found: "${folderPath}"\n   Please check the folder path and make sure it exists.`);
+  }
+
   const ts = options.typescript ?? true;
   const outDir = options.outDir ?? folderPath;
 
@@ -40,6 +60,11 @@ function batch(folderPath: string, options: BatchOptions = {}) {
   const barrelExports: string[] = [];
 
   const files = readdirSync(folderPath).filter((f) => f.endsWith(".svg"));
+  
+  if (files.length === 0) {
+    throw new Error(`❌ No SVG files found in: "${folderPath}"\n   Please make sure the folder contains .svg files.`);
+  }
+
   for (const file of files) {
     const { componentName, code } = convert(join(folderPath, file), options);
     const outFile = join(outDir, `${componentName}.${ts ? "tsx" : "jsx"}`);
@@ -53,9 +78,9 @@ function batch(folderPath: string, options: BatchOptions = {}) {
   }
 }
 
-export const svgenius = {
+export const svgenio = {
   convert,
   batch,
 };
 
-export default svgenius;
+export default svgenio;
