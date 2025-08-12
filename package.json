@@ -1,0 +1,22 @@
+{
+  "name": "svgenius-cli",
+  "version": "1.0.0",
+  "description": "A CLI tool for batch processing and converting SVGs to React components",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces",
+    "test": "npm run test --workspaces",
+    "clean": "npm run clean --workspaces"
+  },
+  "keywords": ["svg", "react", "cli", "converter", "components"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "typescript": "^5.0.0"
+  }
+}
