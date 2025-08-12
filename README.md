@@ -1,4 +1,4 @@
-# SVGGenius CLI
+# SVGGenio CLI
 
 A powerful CLI tool and npm package for converting SVG files to React components with TypeScript support.
 
@@ -15,13 +15,13 @@ A powerful CLI tool and npm package for converting SVG files to React components
 ### CLI Tool
 
 ```bash
-npm install -g @svgenius/cli
+npm install -g @svgenio/cli
 ```
 
 ### NPM Package (for use in projects)
 
 ```bash
-npm install @svgenius/core
+npm install @svgenio/core
 ```
 
 ## CLI Usage
@@ -29,7 +29,7 @@ npm install @svgenius/core
 ### Convert a single SVG file
 
 ```bash
-svgenius convert path/to/icon.svg
+svgenio convert path/to/icon.svg
 ```
 
 **Options:**
@@ -40,19 +40,19 @@ svgenius convert path/to/icon.svg
 **Examples:**
 ```bash
 # Basic conversion
-svgenius convert icon.svg
+svgenio convert icon.svg
 
 # Custom output path and name
-svgenius convert icon.svg -o src/components/MyIcon.tsx -n MyIcon
+svgenio convert icon.svg -o src/components/MyIcon.tsx -n MyIcon
 
 # Generate JavaScript component
-svgenius convert icon.svg --typescript false
+svgenio convert icon.svg --typescript false
 ```
 
 ### Batch process multiple SVG files
 
 ```bash
-svgenius batch path/to/svg/folder
+svgenio batch path/to/svg/folder
 ```
 
 **Options:**
@@ -63,13 +63,13 @@ svgenius batch path/to/svg/folder
 **Examples:**
 ```bash
 # Basic batch conversion
-svgenius batch icons/
+svgenio batch icons/
 
 # Custom output folder with barrel file
-svgenius batch icons/ -o src/components/icons --barrel
+svgenio batch icons/ -o src/components/icons --barrel
 
 # Generate JavaScript components
-svgenius batch icons/ --typescript false
+svgenio batch icons/ --typescript false
 ```
 
 ## NPM Package Usage
@@ -77,10 +77,10 @@ svgenius batch icons/ --typescript false
 ### Basic Usage
 
 ```typescript
-import { svgenius } from '@svgenius/core';
+import { svgenio } from '@svgenio/core';
 
 // Convert a single SVG file
-const result = svgenius.convert('path/to/icon.svg', {
+const result = svgenio.convert('path/to/icon.svg', {
   typescript: true,
   componentName: 'MyIcon'
 });
@@ -92,10 +92,10 @@ console.log(result.code); // Generated React component code
 ### Batch Processing
 
 ```typescript
-import { svgenius } from '@svgenius/core';
+import { svgenio } from '@svgenio/core';
 
 // Process multiple SVG files
-svgenius.batch('path/to/svg/folder', {
+svgenio.batch('path/to/svg/folder', {
   typescript: true,
   outDir: './output',
   barrelFile: true
@@ -134,7 +134,7 @@ Processes multiple SVG files in a folder.
 ### Project Structure
 
 ```
-svgenius-cli/
+svgenio-cli/
 ├── packages/
 │   ├── core/          # Core conversion library
 │   └── cli/           # CLI tool
