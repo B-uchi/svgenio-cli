@@ -1,6 +1,6 @@
 {
   "name": "@svgenio/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool for SVG to React component conversion",
   "type": "module",
   "main": "dist/index.js",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/B-uchi/svgenio-cli#readme",
   "dependencies": {
-    "@svgenio/core": "^1.0.0",
+    "@svgenio/core": "^1.0.1",
     "commander": "^14.0.0"
   },
   "devDependencies": {
